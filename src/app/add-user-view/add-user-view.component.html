@@ -1,0 +1,16 @@
+<div>
+  <h4>First Name</h4>
+  <input name="First Name" type="text" id="firstNameInput" #firstNameInput name="firstName">
+  <h4>Last Name</h4>
+  <input type="text" id="lastNameInput" #lastNameInput name="lastName">
+  <h4>Email</h4>
+  <input type="text" id="emailInput" #emailInput name="email">
+  <h4>Birthday</h4>
+  <input type="text" id="birthdayInput" #birthdayInput name="birthday">
+  <h4>Employment Status</h4>
+  <input type="text" id="employmentInput" #employmentStatusInput name="employmentStatus">
+  <h4>Favorite Color</h4>
+  <input type="text" id="colorInput" #colorInput name="color">
+  <button id='addButton' (click)="AddUser(firstNameInput.value, lastNameInput.value, emailInput.value, birthdayInput.value, employmentStatusInput.value, colorInput.value);">Done</button>
+  <button id='editButton' (click)="EditUser(firstNameInput.value, lastNameInput.value, birthdayInput.value, employmentStatusInput.value, colorInput.value);">Done</button>
+</div>
