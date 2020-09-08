@@ -13,9 +13,11 @@ export class AddUserViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Attempt to add user with all required and optional information
   public AddUser(firstName:string, lastName:string, email:string, birthday:string, employmentStatus:string, color:string) : void{
     document.getElementById('addView').style.display = 'None';
     document.getElementById('mainView').style.display = 'block';
+    //addition was successful
     if (UserDatabase.addUser(firstName, lastName, email, birthday, employmentStatus, color)){
       this.ActionAlert('The addition was successful.');
     }else{
@@ -23,6 +25,7 @@ export class AddUserViewComponent implements OnInit {
     }
   }
 
+  //Attempt to edit user with all required and optional information
   public EditUser(firstName:string, lastName:string, birthday:string, employmentStatus:string, color:string){
     document.getElementById('addView').style.display = 'None';
     document.getElementById('mainView').style.display = 'block';
@@ -33,6 +36,7 @@ export class AddUserViewComponent implements OnInit {
     }
   }
 
+  //fill input fields with user information when editing a user
   public static setChosenUser(chosenId:number){
     this.chosenId = chosenId;
     var user = UserDatabase.getUser(chosenId);
