@@ -16,11 +16,12 @@ export class MainViewComponent implements OnInit {
     this.users = UserDatabase.users;
   }
 
+  //delete user by index
   public onClickMe(index: number) :void{
     UserDatabase.delete(index);
     this.ActionAlert('The user was deleted.');
   }
-
+  //add or edit a user
   public AddUser(id:number, editing:boolean) : void{
     document.getElementById('mainView').style.display = 'None';
     document.getElementById('addView').style.display = 'block';
@@ -40,6 +41,7 @@ export class MainViewComponent implements OnInit {
     this.users = UserDatabase.users;
   }
 
+  //notify user if their action was successful
   private ActionAlert(message:string){
     alert(message);
   }
