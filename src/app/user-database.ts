@@ -2,12 +2,6 @@ import { User, EmploymentStatus } from './user';
 
 export class UserDatabase {
     static index = 4;
-    /*public static users = [
-        new User(1, 'Cody', 'Burchett', 'test@email.com', '9/8/94', EmploymentStatus.FullTime, 'blue'),
-        new User(2, 'Joe', 'Jangle', 'test2@email.com', '1/4/88', EmploymentStatus.FullTime, 'green'),
-        new User(3, 'Bob', 'Biscuit', 'test3@email.com', '3/28/99', EmploymentStatus.PartTime, ''),
-        new User(4, 'Steve', 'Showever', 'test4@email.com', '6/1/77', EmploymentStatus.PartTime, 'red')
-      ];*/
 
       public static users = [
         new User(1, 'Cody', 'Burchett', 'test@email.com', '9/8/94', 'FullTime', 'blue'),
@@ -27,8 +21,9 @@ export class UserDatabase {
         }
     }
 
+    //add new user to the database
     public static addUser(firstName:string, lastName:string, email:string, birthday:string, employmentStatus:string, color:string){
-        //todo: add parameters for creation of user, check that all are present except for optional color, then create
+        //check that all required fields are present
         if (firstName != '' && lastName != '' && email != '' && birthday != '' && employmentStatus != ''){
             this.users.push(new User(++UserDatabase.index, firstName, lastName, email, birthday, employmentStatus, color));
             return true;
@@ -38,9 +33,11 @@ export class UserDatabase {
         }
     }
 
+    //edit existing user in database
     public static editUser(id:number, firstName:string, lastName:string, birthday:string, employmentStatus:string, color:string){
         for (var i = 0; i < UserDatabase.users.length; i++){
             if (UserDatabase.users[i]._id == id){
+                //check that all required fields still exist
                 if (firstName != '' && lastName != '' && birthday != '' && employmentStatus != ''){
                     UserDatabase.users[i].firstName = firstName;
                     UserDatabase.users[i].lastName = lastName;
@@ -56,6 +53,7 @@ export class UserDatabase {
         }
     }
 
+    //get a specific user from database based on id number
     public static getUser(id:number){
         for (var i = 0; i < UserDatabase.users.length; i++){
             if (UserDatabase.users[i]._id == id){
