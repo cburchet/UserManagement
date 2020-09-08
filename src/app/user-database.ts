@@ -62,4 +62,38 @@ export class UserDatabase {
         }
     }
 
+    /*
+    //return a list of users based on search value
+    public static getUserBySearch(searchValue:string){
+        var searchedUsers = [];
+        for (var i = 0; i < UserDatabase.users.length; i++){
+            if (UserDatabase.users[i].firstName.includes(searchValue)){
+                searchedUsers.push(UserDatabase.users[i]);
+            }
+            else if (UserDatabase.users[i].lastName.includes(searchValue)){
+                searchedUsers.push(UserDatabase.users[i]);
+            }
+            else if (UserDatabase.users[i].email.includes(searchValue)){
+                searchedUsers.push(UserDatabase.users[i]);
+            }
+            else if (UserDatabase.users[i].birthday.includes(searchValue)){
+                searchedUsers.push(UserDatabase.users[i]);
+            }
+            else if (UserDatabase.users[i].employmentStatus.includes(searchValue)){
+                searchedUsers.push(UserDatabase.users[i]);
+            }
+            else if (UserDatabase.users[i].favoriteColor.includes(searchValue)){
+                searchedUsers.push(UserDatabase.users[i]);
+            }
+        }
+        return searchedUsers;
+    }
+
+    //return a subset of users for pagination
+    public static getUsersForPage(pageNum:number, pageSize:number){
+        var startValue = (pageNum - 1) * pageSize;
+        var endValue = pageNum * pageSize;
+        return UserDatabase.users.slice(startValue, endValue);
+    }
+    */
 }
